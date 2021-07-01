@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">IMC-calculator</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="teste">Pagina do IMC moleque</string>
+    <string name="menu_imc">Calcular IMC</string>
+    <string name="menu_form">Cadastro</string>
+    <string name="menu_about">Sobre</string>
+</resources>

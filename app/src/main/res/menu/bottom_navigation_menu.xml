@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/IMCFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_calculate_black_24dp"
+        android:title="@string/menu_imc"/>
+    <item
+        android:id="@+id/formFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_note_add_black_24dp"
+        android:title="@string/menu_form"/>
+    <item
+        android:id="@+id/aboutFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_badge_black_24dp"
+        android:title="@string/menu_about"/>
+</menu>
