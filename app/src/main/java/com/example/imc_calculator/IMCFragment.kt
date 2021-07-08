@@ -1,11 +1,16 @@
 package com.example.imc_calculator
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.view.isVisible
 import com.example.imc_calculator.databinding.FragmentImcBinding
+import java.math.RoundingMode
+import java.text.DecimalFormat
 
 class IMCFragment : Fragment() {
 
@@ -20,9 +25,55 @@ class IMCFragment : Fragment() {
         return binding?.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+//        binding?.etAltura?.setOnClickListener {
+//            binding?.etAltura?.setText("")
+//        }
+//
+//        binding?.etPeso?.setOnClickListener {
+//            if (binding?.etPeso?.isFocused() == true) {
+//                binding?.etPeso?.setText("")
+//            } else {
+//
+//            }
+//
+//        }
+
+        binding?.btnCalcular?.setOnClickListener {
+            if (binding?.etAltura?.text.toString().isBlank() || binding?.etPeso?.text.toString().isBlank()) {
+                Toast.makeText(
+                    requireContext().applicationContext,
+                    "Preencha todos os campos",
+                    Toast.LENGTH_SHORT
+                ).show()
+            } else {
+                var altura = binding?.etAltura?.text.toString().toDouble() / 100
+                var peso = binding?.etPeso?.text.toString().toDouble()
+                var imc = peso / (altura * altura).toString().toDouble()
+                binding?.imc?.text = imc.format(0).toString()
+
+                val textResult = when {
+                    imc < 18.5 -> "(Abaixo do peso)"
+                    imc > 18.5 && imc < 24.9 -> "(Peso normal)"
+                    imc > 25 && imc < 29.9 -> "(Sobrepeso)"
+                    imc > 30 && imc < 40 -> "(Obesidade)"
+                    imc > 40 -> "(Obesidade mórbida)"
+                    else -> ""
+                }
+                binding?.tvResultado?.text = textResult
+                binding?.cvResult?.isVisible = true
+            }
+
+        }
+    }
+
     override fun onDestroy() {
         super.onDestroy()
         binding = null
     }
+
+    fun Double.format(digits: Int) = "%.${digits}f".format(this)
 
 }
