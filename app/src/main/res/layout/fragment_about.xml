@@ -24,7 +24,6 @@
                 android:layout_marginTop="30dp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="foto"
                 app:layout_constraintStart_toEndOf="@id/fotoPerfil"
                 app:layout_constraintTop_toTopOf="@id/fotoPerfil" />
 
@@ -72,10 +71,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="30dp"
                 android:text="Conhecimentos:"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="25sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/kotlin"
                 app:layout_constraintStart_toStartOf="parent"
@@ -85,7 +84,7 @@
                 android:id="@+id/kotlin"
                 android:layout_width="87dp"
                 android:layout_height="54dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginStart="16dp"
                 android:src="@drawable/kotlin"
                 app:layout_constraintHorizontal_chainStyle="packed"
@@ -96,43 +95,41 @@
         android:id="@+id/html"
         android:layout_width="87dp"
         android:layout_height="54dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="8dp"
         android:src="@drawable/html"
         app:layout_constraintStart_toEndOf="@id/kotlin"
-        app:layout_constraintTop_toBottomOf="@+id/conhecimentos" />
+        app:layout_constraintTop_toTopOf="@id/kotlin" />
 
     <ImageView
         android:id="@+id/css"
         android:layout_width="87dp"
         android:layout_height="54dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="8dp"
         android:src="@drawable/css"
         app:layout_constraintStart_toEndOf="@id/html"
-        app:layout_constraintTop_toBottomOf="@+id/conhecimentos" />
+        app:layout_constraintTop_toTopOf="@id/kotlin" />
 
     <ImageView
         android:id="@+id/js"
         android:layout_width="87dp"
         android:layout_height="54dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
         android:src="@drawable/js"
         app:layout_constraintStart_toEndOf="@id/css"
-        app:layout_constraintTop_toBottomOf="@+id/conhecimentos" />
+        app:layout_constraintTop_toTopOf="@id/kotlin" />
 
 
             <TextView
                 android:id="@+id/contato"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="16dp"
                 android:text="@string/redes"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="25sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toTopOf="@id/gitHub"
                 app:layout_constraintTop_toBottomOf="@id/kotlin"/>
@@ -141,10 +138,10 @@
                 android:id="@+id/gitHub"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_marginEnd="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="16dp"
                 android:src="@drawable/github"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/linkedin"
                 app:layout_constraintTop_toBottomOf="@id/contato"
                 app:layout_constraintHorizontal_chainStyle="packed"/>
 
@@ -161,11 +158,11 @@
                 android:id="@+id/linkedin"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
+                android:layout_marginStart="16dp"
                 android:padding="10dp"
                 android:src="@drawable/linkedin"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/gitHub"
-                app:layout_constraintTop_toBottomOf="@+id/contato" />
+                app:layout_constraintTop_toTopOf="@id/gitHub"/>
 
     <TextView
         android:layout_width="wrap_content"
