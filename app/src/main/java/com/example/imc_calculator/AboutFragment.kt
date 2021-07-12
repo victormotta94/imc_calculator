@@ -1,5 +1,7 @@
 package com.example.imc_calculator
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -18,6 +20,18 @@ class AboutFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentAboutBinding.inflate(inflater, container, false)
         return binding?.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding?.linkedin?.setOnClickListener {
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://www.linkedin.com/in/joselaine-aparecida-2715b0203/")))
+        }
+
+        binding?.gitHub?.setOnClickListener {
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://www.linkedin.com/in/victormotta94/")))
+        }
     }
 
     override fun onDestroy() {

@@ -1,15 +1,180 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".AboutFragment">
+    android:layout_height="match_parent">
 
-    <!-- TODO: Update blank fragment layout -->
+            <ImageView
+                android:id="@+id/fotoPerfil"
+                android:layout_width="151dp"
+                android:layout_height="148dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/foto_perfil"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/nome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/name"
+                android:textSize="20sp"
+                android:layout_marginTop="30dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="foto"
+                app:layout_constraintStart_toEndOf="@id/fotoPerfil"
+                app:layout_constraintTop_toTopOf="@id/fotoPerfil" />
+
+            <TextView
+                android:id="@+id/mobileDeveloper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="Mobile Developer"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/fotoPerfil"
+                app:layout_constraintTop_toBottomOf="@id/nome" />
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Em Breve"
-        android:textSize="55sp"/>
+        android:id="@+id/infos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:text="@string/infos"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/fotoPerfil"
+        app:layout_constraintTop_toBottomOf="@id/mobileDeveloper" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:text="@string/email"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/fotoPerfil"
+        app:layout_constraintTop_toBottomOf="@id/infos" />
+
+            <TextView
+                android:id="@+id/conhecimentos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:text="Conhecimentos:"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/kotlin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fotoPerfil" />
+
+            <ImageView
+                android:id="@+id/kotlin"
+                android:layout_width="87dp"
+                android:layout_height="54dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/kotlin"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/conhecimentos" />
+
+    <ImageView
+        android:id="@+id/html"
+        android:layout_width="87dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/html"
+        app:layout_constraintStart_toEndOf="@id/kotlin"
+        app:layout_constraintTop_toBottomOf="@+id/conhecimentos" />
+
+    <ImageView
+        android:id="@+id/css"
+        android:layout_width="87dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/css"
+        app:layout_constraintStart_toEndOf="@id/html"
+        app:layout_constraintTop_toBottomOf="@+id/conhecimentos" />
+
+    <ImageView
+        android:id="@+id/js"
+        android:layout_width="87dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/js"
+        app:layout_constraintStart_toEndOf="@id/css"
+        app:layout_constraintTop_toBottomOf="@+id/conhecimentos" />
+
+
+            <TextView
+                android:id="@+id/contato"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="@string/redes"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/gitHub"
+                app:layout_constraintTop_toBottomOf="@id/kotlin"/>
+
+            <ImageView
+                android:id="@+id/gitHub"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/github"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/linkedin"
+                app:layout_constraintTop_toBottomOf="@id/contato"
+                app:layout_constraintHorizontal_chainStyle="packed"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/social_media"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/gitHub"
+        app:layout_constraintStart_toStartOf="@id/gitHub"/>
+
+            <ImageView
+                android:id="@+id/linkedin"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:padding="10dp"
+                android:src="@drawable/linkedin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/gitHub"
+                app:layout_constraintTop_toBottomOf="@+id/contato" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/social_media"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/linkedin"
+        app:layout_constraintStart_toStartOf="@id/linkedin"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
