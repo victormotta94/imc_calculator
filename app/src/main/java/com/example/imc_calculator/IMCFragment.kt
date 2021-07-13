@@ -1,6 +1,7 @@
 package com.example.imc_calculator
 
-import android.annotation.SuppressLint
+import android.app.Activity
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,8 +10,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.view.isVisible
 import com.example.imc_calculator.databinding.FragmentImcBinding
-import java.math.RoundingMode
-import java.text.DecimalFormat
+import android.view.inputmethod.InputMethodManager
 
 class IMCFragment : Fragment() {
 
@@ -28,18 +28,6 @@ class IMCFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        binding?.etAltura?.setOnClickListener {
-//            binding?.etAltura?.setText("")
-//        }
-//
-//        binding?.etPeso?.setOnClickListener {
-//            if (binding?.etPeso?.isFocused() == true) {
-//                binding?.etPeso?.setText("")
-//            } else {
-//
-//            }
-//
-//        }
 
         binding?.btnCalcular?.setOnClickListener {
             if (binding?.etAltura?.text.toString().isBlank() || binding?.etPeso?.text.toString().isBlank()) {
@@ -64,6 +52,9 @@ class IMCFragment : Fragment() {
                 }
                 binding?.tvResultado?.text = textResult
                 binding?.cvResult?.isVisible = true
+                context?.hideKeyboard()
+
+
             }
 
         }
@@ -75,5 +66,9 @@ class IMCFragment : Fragment() {
     }
 
     fun Double.format(digits: Int) = "%.${digits}f".format(this)
+    fun Context.hideKeyboard() {
+        val inputMethodManager = getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+        inputMethodManager.hideSoftInputFromWindow(view?.windowToken, 0)
+    }
 
 }
