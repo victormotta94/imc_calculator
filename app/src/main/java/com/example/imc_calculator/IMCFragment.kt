@@ -37,10 +37,10 @@ class IMCFragment : Fragment() {
                     Toast.LENGTH_SHORT
                 ).show()
             } else {
-                var altura = binding?.etAltura?.text.toString().toDouble() / 100
-                var peso = binding?.etPeso?.text.toString().toDouble()
-                var imc = peso / (altura * altura).toString().toDouble()
-                binding?.imc?.text = imc.format(0).toString()
+                val altura = binding?.etAltura?.text.toString().toDouble() / 100
+                val peso = binding?.etPeso?.text.toString().toDouble()
+                val imc = peso / (altura * altura).toString().toDouble()
+                binding?.imc?.text = imc.format(0)
 
                 val textResult = when {
                     imc < 18.5 -> "(Abaixo do peso)"
