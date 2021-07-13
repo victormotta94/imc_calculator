@@ -26,11 +26,11 @@ class AboutFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding?.linkedin?.setOnClickListener {
-            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://www.linkedin.com/in/joselaine-aparecida-2715b0203/")))
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://www.linkedin.com/in/victormotta94/")))
         }
 
         binding?.gitHub?.setOnClickListener {
-            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://www.linkedin.com/in/victormotta94/")))
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/victormotta94")))
         }
     }
 
